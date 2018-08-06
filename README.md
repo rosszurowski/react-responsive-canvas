@@ -10,14 +10,6 @@ Simple React component for a canvas that fits the size of it's parent.
 npm install --save react-responsive-canvas
 ```
 
-## Context
-
-By default, HTML `<canvas />` elements are a fixed size. When creating animated canvas graphics, I usually want the canvas to take the shape of the container it sits in — whether that's the whole page, or a header image.
-
-After writing this component too many times using [hughsk/canvas-fit](https://github.com/hughsk/canvas-fit), I built this module.
-
-It auto-resizes the canvas to fill it's container, and by default scales the canvas to match the user's screen resolution (ie. regular vs. retina screens).
-
 ## Usage
 
 #### Props
@@ -53,6 +45,14 @@ class App extends Component {
   }
 }
 ```
+
+## Context
+
+By default, HTML `<canvas />` elements are a fixed size. When creating animated canvas graphics, I usually want the canvas to take the shape of the container it sits in — whether that's the whole page, or a header image.
+
+After writing this component too many times using [hughsk/canvas-fit](https://github.com/hughsk/canvas-fit), I built this module.
+
+It auto-resizes the canvas to fill it's container, and by default scales the canvas to match the user's screen resolution (ie. regular vs. retina screens).
 
 ## License
 
