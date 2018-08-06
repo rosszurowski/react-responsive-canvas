@@ -30,7 +30,6 @@ export default class ResponsiveCanvas extends Component<Props, State> {
 
   componentDidMount() {
     window.addEventListener('resize', this.handleResize, false);
-    this.handleResize();
   }
 
   componentWillUnmount() {
