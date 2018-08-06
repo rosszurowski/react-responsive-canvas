@@ -26,18 +26,14 @@ export default class ResponsiveCanvas extends Component<Props, State> {
     height: 0,
   };
 
-  rafId: AnimationFrameID;
   $canvas: HTMLCanvasElement;
 
   componentDidMount() {
     window.addEventListener('resize', this.handleResize, false);
-    this.rafId = requestAnimationFrame(() => this.handleResize());
+    this.handleResize();
   }
 
   componentWillUnmount() {
-    if (this.rafId) {
-      cancelAnimationFrame(this.rafId);
-    }
     window.removeEventListener('resize', this.handleResize, false);
   }
 
