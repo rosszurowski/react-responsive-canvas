@@ -4,9 +4,7 @@ import React, { Component } from 'react';
 import getSize from './get-size';
 
 type Props = {
-  canvasRef:
-    | { current: null | HTMLCanvasElement }
-    | (el: HTMLCanvasElement) => void,
+  canvasRef: (el: HTMLCanvasElement) => void,
   onResize: () => void,
   scale: number,
 };
@@ -30,6 +28,7 @@ export default class ResponsiveCanvas extends Component<Props, State> {
 
   componentDidMount() {
     window.addEventListener('resize', this.handleResize, false);
+    this.setSize();
   }
 
   componentWillUnmount() {
@@ -37,6 +36,11 @@ export default class ResponsiveCanvas extends Component<Props, State> {
   }
 
   handleResize = () => {
+    this.setSize();
+    this.props.onResize();
+  };
+
+  setSize = () => {
     const parent = this.$canvas.parentElement;
 
     if (!parent) {
@@ -46,8 +50,7 @@ export default class ResponsiveCanvas extends Component<Props, State> {
     const [width, height] = getSize(parent);
 
     this.setState({ width, height });
-    this.props.onResize();
-  };
+  }
 
   setRef = (el: ?HTMLCanvasElement) => {
     if (!el) {
@@ -59,8 +62,6 @@ export default class ResponsiveCanvas extends Component<Props, State> {
     this.$canvas = el;
     if (typeof canvasRef === 'function') {
       canvasRef(el);
-    } else if (canvasRef.current) {
-      canvasRef.current = el;
     }
   };
 
