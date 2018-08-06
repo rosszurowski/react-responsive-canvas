@@ -1,6 +1,6 @@
 {
   "name": "react-responsive-canvas",
-  "version": "0.0.7",
+  "version": "1.0.0",
   "main": "index.js",
   "files": [
     "index.js"
