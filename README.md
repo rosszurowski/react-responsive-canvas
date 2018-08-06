@@ -2,7 +2,7 @@
 
 [![npm](https://badgen.now.sh/npm/v/react-responsive-canvas)](https://www.npmjs.com/package/react-responsive-canvas)
 
-Simple React component for a canvas that fits the size of it's parent.
+Simple React component for a canvas that fits the size of its parent.
 
 ## Installation
 
