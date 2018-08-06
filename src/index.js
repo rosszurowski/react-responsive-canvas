@@ -16,7 +16,7 @@ type State = {
 
 export default class ResponsiveCanvas extends Component<Props, State> {
   static defaultProps = {
-    scale: window.devicePixelRatio,
+    scale: typeof window !== 'undefined' ? window.devicePixelRatio : 1,
   };
 
   state = {
@@ -50,7 +50,7 @@ export default class ResponsiveCanvas extends Component<Props, State> {
     const [width, height] = getSize(parent);
 
     this.setState({ width, height });
-  }
+  };
 
   setRef = (el: ?HTMLCanvasElement) => {
     if (!el) {
