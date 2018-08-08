@@ -29,6 +29,7 @@
     "rollup-plugin-node-resolve": "^3.3.0",
     "rollup-plugin-uglify": "^4.0.0"
   },
+  "repository": "rosszurowski/react-responsive-canvas",
   "keywords": [
     "react",
     "react-component",
