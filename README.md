@@ -39,7 +39,7 @@ class App extends Component {
       <div>
         <Canvas
           canvasRef={el => (this.canvas = el)}
-          handleResize={this.draw} />
+          onResize={this.draw} />
       </div>
     );
   }
